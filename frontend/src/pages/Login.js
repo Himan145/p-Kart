@@ -15,7 +15,7 @@ export const Login=()=>{
     const handleLogin=async(e)=>{
         e.preventDefault();
         try{
-        const res=await axios.post('p-kart.vercel.app/api/v1/auth/login',{email,password})
+        const res=await axios.post('https://p-kart.vercel.app/api/v1/auth/login',{email,password})
         if(res && res.data.success){
             setAuth({
                 ...auth,
