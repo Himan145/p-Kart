@@ -23,7 +23,7 @@ export const HomePage=()=>{
     //get total count
     const getTotal=async()=>{
         try{
-            const {data}=await axios.get('http://localhost:5000/api/v1/product/product-count');
+            const {data}=await axios.get('p-kart.vercel.app/api/v1/product/product-count');
             setTotal(data?.total);
         }
         catch(err){
@@ -35,7 +35,7 @@ export const HomePage=()=>{
     const getAllProducts=async()=>{
         try{
             setLoading(true);
-            const {data}=await axios.get(`http://localhost:5000/api/v1/product/product-list/${page}`);
+            const {data}=await axios.get(`p-kart.vercel.app/api/v1/product/product-list/${page}`);
             setLoading(false);
             setProducts(data.products);
             //console.log(JSON.stringify(checked));
@@ -52,7 +52,7 @@ export const HomePage=()=>{
     //get all category
     const getCategory=async()=>{
         try{
-            const {data}=await axios.get('http://localhost:5000/api/v1/category/get-category');
+            const {data}=await axios.get('p-kart.vercel.app/api/v1/category/get-category');
             if(data.success){
                 setCategories(data.category);
             }
@@ -89,7 +89,7 @@ export const HomePage=()=>{
     
     const filterProduct = async () => {
         try {
-          const { data } = await axios.post("http://localhost:5000/api/v1/product/product-filter", {
+          const { data } = await axios.post("p-kart.vercel.app/api/v1/product/product-filter", {
             checked,
             radio,
           });
@@ -107,7 +107,7 @@ export const HomePage=()=>{
     const loadMore=async()=>{
         try{
             setLoading(true);
-            const {data}=await axios.get(`http://localhost:5000/api/v1/product/product-list/${page}`)
+            const {data}=await axios.get(`p-kart.vercel.app/api/v1/product/product-list/${page}`)
             setLoading(false);
             setProducts([...products,...data.products])
         }
@@ -158,7 +158,7 @@ export const HomePage=()=>{
                     <div className='d-flex flex-wrap justify-content-evenly align-items-center'>
                         {products?.map((p)=>(
                             <div className='card m-2' style={{width:"18rem"}}>
-                            <img src={`http://localhost:5000/api/v1/product/get-photo/${p._id}`} className='card-img-top' alt={p.name}/>
+                            <img src={`p-kart.vercel.app/api/v1/product/get-photo/${p._id}`} className='card-img-top' alt={p.name}/>
                             <div className='card-body'>
                                 <h5 className='card-title'>{p.name}</h5>
                                 <p className='card-text'>{p.description.substring(0,25)}</p>
