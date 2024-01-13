@@ -7,7 +7,7 @@ export const Users=()=>{
     const [users,setUsers]=useState([]);
     const AllUsers=async()=>{
         try{
-            const {data}=await axios.get('p-kart.vercel.app/api/v1/auth/all-users');
+            const {data}=await axios.get('https://p-kart.vercel.app/api/v1/auth/all-users');
             setUsers(data);
         }
         catch(err){
