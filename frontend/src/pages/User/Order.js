@@ -10,7 +10,7 @@ export const Order=()=>{
     const {auth}=useContext(AppContext);
     const getOrders=async()=>{
         try{
-            const {data}=await axios.get(`p-kart.vercel.app/api/v1/auth/orders/${auth?.user?._id}`);
+            const {data}=await axios.get(`https://p-kart.vercel.app/api/v1/auth/orders/${auth?.user?._id}`);
             setOrders(data);
         }
         catch(err){
