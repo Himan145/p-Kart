@@ -10,7 +10,7 @@ export const Order=()=>{
     const {auth}=useContext(AppContext);
     const getOrders=async()=>{
         try{
-            const {data}=await axios.get(`http://localhost:5000/api/v1/auth/orders/${auth?.user?._id}`);
+            const {data}=await axios.get(`p-kart.vercel.app/api/v1/auth/orders/${auth?.user?._id}`);
             setOrders(data);
         }
         catch(err){
@@ -54,7 +54,7 @@ export const Order=()=>{
                                 {o?.products?.map((p,i)=>(
                                    <div className='row mb-2 p-3 card flex-row'>
                                    <div className='col-md-4'>
-                                   <img src={`http://localhost:5000/api/v1/product/get-photo/${p._id}`} className='card-img-top' alt={p.name} width={"100px"} height={"100px"}/>
+                                   <img src={`p-kart.vercel.app/api/v1/product/get-photo/${p._id}`} className='card-img-top' alt={p.name} width={"100px"} height={"100px"}/>
                                    </div>
                                    <div className='col-md-8'>
                                        <p>{p.name}</p>
