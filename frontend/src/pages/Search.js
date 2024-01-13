@@ -18,7 +18,7 @@ export const Search=()=>{
                     <div className='d-flex flex-wrap justify-content-evenly align-items-center'>
                         {searchval?.result.map((p)=>(
                             <div className='card m-2' style={{width:"18rem"}}>
-                            <img src={`http://localhost:5000/api/v1/product/get-photo/${p._id}`} className='card-img-top' alt={p.name}/>
+                            <img src={`p-kart.vercel.app/api/v1/product/get-photo/${p._id}`} className='card-img-top' alt={p.name}/>
                             <div className='card-body'>
                                 <h5 className='card-title'>{p.name}</h5>
                                 <p className='card-text'>{p.description.substring(0,25)}</p>
