@@ -24,7 +24,7 @@ export const UpdateProduct = () => {
     const getSingleProduct = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/api/v1/product/get-single-product/${params.slug}`
+          `p-kart.vercel.app/api/v1/product/get-single-product/${params.slug}`
         );
         setName(data.product.name);
         setId(data.product._id);
@@ -46,7 +46,7 @@ export const UpdateProduct = () => {
     //get all category
     const getAllCategory = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/v1/category/get-category");
+        const { data } = await axios.get("p-kart.vercel.app/api/v1/category/get-category");
         if (data?.success) {
           setCategories(data?.category);
         }
@@ -73,7 +73,7 @@ export const UpdateProduct = () => {
         productData.append("shipping",shipping);
         //console.log(name,description,price,quantity,category,shipping);
         //console.log(id);
-        await axios.put(`http://localhost:5000/api/v1/product/update-product/${id}`,productData)
+        await axios.put(`p-kart.vercel.app/api/v1/product/update-product/${id}`,productData)
         .then(res=>{
             //console.log(res);
             navigate("/admin/products");
@@ -90,7 +90,7 @@ export const UpdateProduct = () => {
         let answer = window.prompt("Are You Sure want to delete this product ? ");
         if (!answer) return;
         await axios.delete(
-          `http://localhost:5000/api/v1/product/delete-product/${id}`
+          `p-kart.vercel.app/api/v1/product/delete-product/${id}`
         );
         navigate("/admin/products");
       } catch (error) {
@@ -151,7 +151,7 @@ export const UpdateProduct = () => {
                   ) : (
                     <div className="text-center">
                       <img
-                        src={`http://localhost:5000/api/v1/product/get-photo/${id}`}
+                        src={`p-kart.vercel.app/api/v1/product/get-photo/${id}`}
                         alt="product_photo"
                         height={"200px"}
                         className="img img-responsive"
