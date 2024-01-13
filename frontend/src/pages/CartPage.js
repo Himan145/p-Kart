@@ -43,7 +43,7 @@ export const CartPage=()=>{
     //get payment gateway token
     const getToken=async()=>{
         try{
-            const {data}=await axios.get('http://localhost:5000/api/v1/product/braintree/token');
+            const {data}=await axios.get('p-kart.vercel.app/api/v1/product/braintree/token');
             setClientToken(data?.clientToken);
         }
         catch(err){
@@ -60,7 +60,7 @@ export const CartPage=()=>{
             setLoading(true);
             const {nonce}=await instance.requestPaymentMethod();
             const user=auth.user;
-            await axios.post('http://localhost:5000/api/v1/product/braintree/payment',{nonce,cartval,user});
+            await axios.post('p-kart.vercel.app/api/v1/product/braintree/payment',{nonce,cartval,user});
             setLoading(false);
             localStorage.removeItem('cartval');
             setCartval([]);
@@ -91,7 +91,7 @@ export const CartPage=()=>{
                     cartval?.map(p=>(
                         <div className='row mb-2 p-3 card flex-row'>
                             <div className='col-md-4'>
-                            <img src={`http://localhost:5000/api/v1/product/get-photo/${p._id}`} className='card-img-top' alt={p.name} width={"100px"} height={"100px"}/>
+                            <img src={`p-kart.vercel.app/api/v1/product/get-photo/${p._id}`} className='card-img-top' alt={p.name} width={"100px"} height={"100px"}/>
                             </div>
                             <div className='col-md-8'>
                                 <p>{p.name}</p>
