@@ -21,7 +21,7 @@ export const CreateProduct=()=>{
     //get all category
     const getCategory=async()=>{
         try{
-            const {data}=await axios.get('p-kart.vercel.app/api/v1/category/get-category');
+            const {data}=await axios.get('https://p-kart.vercel.app/api/v1/category/get-category');
             if(data.success){
                 setCategories(data.category);
             }
