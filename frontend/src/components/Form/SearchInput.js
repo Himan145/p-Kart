@@ -9,7 +9,7 @@ export const SearchInput=()=>{
     const handleSubmit=async(e)=>{
         e.preventDefault();
         try{
-            const {data}=await axios.get(`p-kart.vercel.app/api/v1/product/search/${searchval.keyword}`)
+            const {data}=await axios.get(`https://p-kart.vercel.app/api/v1/product/search/${searchval.keyword}`)
             setSearchval({...searchval,result:data})
             navigate('/search');
         }
