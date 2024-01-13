@@ -21,7 +21,7 @@ export const CreateProduct=()=>{
     //get all category
     const getCategory=async()=>{
         try{
-            const {data}=await axios.get('http://localhost:5000/api/v1/category/get-category');
+            const {data}=await axios.get('p-kart.vercel.app/api/v1/category/get-category');
             if(data.success){
                 setCategories(data.category);
             }
@@ -48,7 +48,7 @@ export const CreateProduct=()=>{
             productData.append("category", category);
             productData.append("shipping",shipping);
             axios.post(
-                "http://localhost:5000/api/v1/product/create-product",
+                "p-kart.vercel.app/api/v1/product/create-product",
                 productData
             )
             .then(res=>{
