@@ -21,7 +21,13 @@ app.use(express.json({
     },
     limit: '50mb'
     }));
-app.use(cors());
+app.use(cors(
+    {
+        origin:["https://p-Kart.vercel.app"],
+        methods:["POST","PUT","DELETE","GET"],
+        credentials: true
+    }
+));
 app.use(express.urlencoded({ extended: true, limit:'50mb' }));
 
 //routes
