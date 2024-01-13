@@ -13,7 +13,7 @@ export const Register=()=>{
     const navigate=useNavigate();
     const handleSubmit=(e)=>{
         e.preventDefault();
-        axios.post('http://localhost:5000/api/v1/auth/register',{name,email,password,phone,address})
+        axios.post('p-kart.vercel.app/api/v1/auth/register',{name,email,password,phone,address})
         .then(res=>{
             console.log(res);
             navigate('/login');
