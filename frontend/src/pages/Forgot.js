@@ -10,7 +10,7 @@ export const Forgot=(e)=>{
 
     const handleForgot=async(e)=>{
         e.preventDefault();
-        axios.post('http://localhost:5000/api/v1/auth/forgot',{email,newPassword})
+        axios.post('p-kart.vercel.app/api/v1/auth/forgot',{email,newPassword})
         .then(res=>{
             if(res.data.success){
                 window.alert(res.data.message);
