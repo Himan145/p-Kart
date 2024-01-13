@@ -24,7 +24,7 @@ export const UpdateProduct = () => {
     const getSingleProduct = async () => {
       try {
         const { data } = await axios.get(
-          `p-kart.vercel.app/api/v1/product/get-single-product/${params.slug}`
+          `https://p-kart.vercel.app/api/v1/product/get-single-product/${params.slug}`
         );
         setName(data.product.name);
         setId(data.product._id);
@@ -46,7 +46,7 @@ export const UpdateProduct = () => {
     //get all category
     const getAllCategory = async () => {
       try {
-        const { data } = await axios.get("p-kart.vercel.app/api/v1/category/get-category");
+        const { data } = await axios.get("https://p-kart.vercel.app/api/v1/category/get-category");
         if (data?.success) {
           setCategories(data?.category);
         }
@@ -73,7 +73,7 @@ export const UpdateProduct = () => {
         productData.append("shipping",shipping);
         //console.log(name,description,price,quantity,category,shipping);
         //console.log(id);
-        await axios.put(`p-kart.vercel.app/api/v1/product/update-product/${id}`,productData)
+        await axios.put(`https://p-kart.vercel.app/api/v1/product/update-product/${id}`,productData)
         .then(res=>{
             //console.log(res);
             navigate("/admin/products");
@@ -151,7 +151,7 @@ export const UpdateProduct = () => {
                   ) : (
                     <div className="text-center">
                       <img
-                        src={`p-kart.vercel.app/api/v1/product/get-photo/${id}`}
+                        src={`https://p-kart.vercel.app/api/v1/product/get-photo/${id}`}
                         alt="product_photo"
                         height={"200px"}
                         className="img img-responsive"
