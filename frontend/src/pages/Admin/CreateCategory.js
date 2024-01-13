@@ -10,7 +10,7 @@ export const CreateCategory=()=>{
     const [categories,setCategories]=useState([]);
     const getCategory=async()=>{
         try{
-            const {data}=await axios.get('p-kart.vercel.app/api/v1/category/get-category');
+            const {data}=await axios.get('https://p-kart.vercel.app/api/v1/category/get-category');
             if(data.success){
                 setCategories(data.category);
             }
@@ -28,7 +28,7 @@ export const CreateCategory=()=>{
     const handleSubmit=async(e)=>{
         e.preventDefault();
         try{
-            await axios.post('p-kart.vercel.app/api/v1/category/create-category',{name});
+            await axios.post('https://p-kart.vercel.app/api/v1/category/create-category',{name});
             getCategory();
         }
         catch(err){
@@ -44,7 +44,7 @@ export const CreateCategory=()=>{
     const handleUpdate=async(e)=>{
         e.preventDefault();
         try{
-            await axios.put(`p-kart.vercel.app/api/v1/category/update-category/${selected._id}`,{name:updatedName});
+            await axios.put(`https://p-kart.vercel.app/api/v1/category/update-category/${selected._id}`,{name:updatedName});
             setSelected(null);
             setUpdatedName("");
             setVisible(false);
@@ -58,7 +58,7 @@ export const CreateCategory=()=>{
     //delete category
     const handleDelete=async(id)=>{
         try{
-            await axios.delete(`p-kart.vercel.app/api/v1/category/delete-category/${id}`,{name:updatedName});
+            await axios.delete(`https://p-kart.vercel.app/api/v1/category/delete-category/${id}`,{name:updatedName});
             getCategory();
         }
         catch(err){
