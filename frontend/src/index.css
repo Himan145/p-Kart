@@ -126,7 +126,7 @@ img {
   padding-top: 12vh;
   padding-bottom: 8vh;
   margin-top: 0px;
-  background-image: url('C:\Users\Himan Biswas\p-Kart\frontend\src\images\about_background.png');
+  background-image: url('./images/about_background.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -141,7 +141,7 @@ img {
   padding-top: 10vh;
   padding-bottom: 8vh;
   margin-top: 0px;
-  background-image: url('C:\Users\Himan Biswas\p-Kart\frontend\src\images\home-7228153_1920.png');
+  background-image: url('./images/home-7228153_1920.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -156,7 +156,7 @@ img {
   padding-top: 12vh;
   padding-bottom:6vh;
   margin-top: 0px;
-  background-image: url('C:\Users\Himan Biswas\p-Kart\frontend\src\images\security-5043368_1920.jpg');
+  background-image: url('./images/security-5043368_1920.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
