@@ -21,13 +21,21 @@ app.use(express.json({
     },
     limit: '50mb'
     }));
-app.use(cors(
-    {
-        origin:["https://p-kart-ecommerce.vercel.app"],
-        methods:["POST","PUT","DELETE","GET"],
-        credentials: true
-    }
-));
+// app.use(cors(
+//     {
+//         origin:["https://p-kart-ecommerce.vercel.app"],
+//         methods:["POST","PUT","DELETE","GET"],
+//         credentials: true
+//     }
+// ));
+
+const corsOptions ={
+    origin:'https://p-kart-ecommerce.vercel.app', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
+
 app.use(express.urlencoded({ extended: true, limit:'50mb' }));
 
 //routes
