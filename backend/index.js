@@ -23,7 +23,7 @@ app.use(express.json({
     }));
 // app.use(cors(
 //     {
-//         origin:["https://p-kart-ecommerce.vercel.app"],
+//         origin:["*"],
 //         methods:["POST","PUT","DELETE","GET"],
 //         credentials: true
 //     }
