@@ -292,7 +292,7 @@ const ProductCategoryController=async(req,res)=>{
     }
 }
 
-
+/*
 //payment gateway
 const pub="zs7g8rv2yzcf8y2b"
 const pri="4538b21a0e109661a51afc8ca6fec15b"
@@ -303,9 +303,9 @@ var gateway = new braintree.BraintreeGateway({
     publicKey:pub,
     privateKey:pri
 });
-
+*/
 const BraintreeTokenController=async(req,res)=>{
-    try{
+    try{/*
         gateway.clientToken.generate({},function(err,response){
             if(err){
                 res.status(500).send(err);
@@ -313,7 +313,7 @@ const BraintreeTokenController=async(req,res)=>{
             else{
                 res.send(response);
             }
-        })
+        })*/
     }
     catch(err){
         console.log(err);
@@ -322,7 +322,7 @@ const BraintreeTokenController=async(req,res)=>{
 
 const BraintreePaymentController=async(req,res)=>{
     try{
-        const {nonce,cartval,user}=req.body;
+        /*const {nonce,cartval,user}=req.body;
         let total=0;
         cartval.map(item =>{total+=item.price});
         let newTransaction=gateway.transaction.sale({
@@ -344,7 +344,7 @@ const BraintreePaymentController=async(req,res)=>{
             else{
                 res.status(500).send(error);
             }
-        })
+        })*/
     }
     catch(err){
         console.log(err);
