@@ -1,5 +1,5 @@
 const userModel=require('../models/userModel.js');
-const {hashPassword,comparePassword}=require('../helpers/authHelper.js');
+//const {hashPassword,comparePassword}=require('../helpers/authHelper.js');
 const jwt=require('jsonwebtoken');
 const OrderModel = require('../models/OrderModel.js');
 
@@ -19,9 +19,9 @@ const registerController=async(req,res)=>{
             })
         }
         //register user
-        const hashedPassword=await hashPassword(password);
+        //const hashedPassword=await hashPassword(password);
         //save
-        const newUser=await new userModel({name,email,phone,address,password:hashedPassword}).save()
+        const newUser=await new userModel({name,email,phone,address,password}).save()
         res.status(201).send({
             success:true,
             message:'User Register Successfully',
@@ -50,7 +50,8 @@ const loginController=async(req,res)=>{
                 message:'Account does not exist'
             })
         }
-        const match=await comparePassword(password,user.password);
+        //const match=await comparePassword(password,user.password);
+        const match=(password===user.password);
         if(!match){
             return res.status(200).send({
                 success:false,
@@ -96,8 +97,8 @@ const forgotController=async(req,res)=>{
                 message:'Invalid email'
             });
         }
-        const hashed=await hashPassword(newPassword);
-        await userModel.findByIdAndUpdate(user._id,{password:hashed});
+        //const hashed=await hashPassword(newPassword);
+        await userModel.findByIdAndUpdate(user._id,{password});
         res.status(200).send({
             success:true,
             message:"password reset successfully"
