@@ -2,7 +2,7 @@ const ProductModel = require("../models/ProductModel");
 const fs=require('fs');
 const slugify=require('slugify');
 const CategoryModel=require("../models/CategoryModel");
-const braintree=require('braintree');
+//const braintree=require('braintree');
 const OrderModel = require("../models/OrderModel");
 const dotenv=require('dotenv');
 dotenv.config();
