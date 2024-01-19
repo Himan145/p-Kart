@@ -299,9 +299,9 @@ const pri="4538b21a0e109661a51afc8ca6fec15b"
 const mid="c3qswwkhw45283kp"
 var gateway = new braintree.BraintreeGateway({
     environment: braintree.Environment.Sandbox,
-    merchantId:process.env.BRAINTREE_MERCHANT_ID,
-    publicKey:process.env.BRAINTREE_PUBLIC_KEY,
-    privateKey:process.env.BRAINTREE_PRIVATE_KEY
+    merchantId:mid,
+    publicKey:pub,
+    privateKey:pri
 });
 
 const BraintreeTokenController=async(req,res)=>{
